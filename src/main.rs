@@ -26,7 +26,7 @@ async fn login(data: web::Json<LoginInputs>) -> impl Responder {
     if data.email == "kalidyasin29@gmail.com" && data.password == "123456" {
         HttpResponse::Ok().json(data.into_inner())
     } else {
-        HttpResponse::Ok().json("Invalid Email Or Password")
+        HttpResponse::Unauthorized().json("Invalid Email Or Password")
     }
 }
 
