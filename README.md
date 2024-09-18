@@ -41,6 +41,14 @@ The project is structured as follows:
 * [src/main.rs](cci:7://src/main.rs:0:0-0:0): The main entry point of the application.
 * `Cargo.toml`: The project's configuration file.
 * `Dockerfile`: The Dockerfile used to build the project's Docker image.
+## Getting Started
+
+### Cloning the Repository
+
+To clone the repository, run the following command:
+```bash
+git clone https://github.com/your-username/project-management.git
+
 
 ## Dockerfile
 
