@@ -123,3 +123,7 @@ EXPOSE 8080
 
 # run server
 CMD [ "/app/project-management" ]
+```
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
