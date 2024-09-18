@@ -3,14 +3,18 @@
 #################
 ## build stage ##
 #################
-FROM rust:slim-buster AS builder
+FROM rust:alpine AS builder
 WORKDIR /code
+
+RUN apk add --no-cache gcc g++ musl-dev
 
 # Download crates-io index and fetch dependency code.
 # This step avoids needing to spend time on every build downloading the index
 # which can take a long time within the docker context. Docker will cache it.
 RUN USER=root cargo init
+
 COPY Cargo.toml Cargo.toml
+
 RUN cargo fetch
 
 # copy app files
@@ -22,7 +26,8 @@ RUN cargo build --release
 ###############
 ## run stage ##
 ###############
-FROM debian:buster-slim
+# FROM debian:buster-slim
+FROM alpine:latest
 WORKDIR /app
 
 # copy server binary from build stage
