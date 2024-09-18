@@ -41,6 +41,7 @@ The project is structured as follows:
 * [src/main.rs](cci:7://src/main.rs:0:0-0:0): The main entry point of the application.
 * `Cargo.toml`: The project's configuration file.
 * `Dockerfile`: The Dockerfile used to build the project's Docker image.
+
 ## Getting Started
 
 ### Cloning the Repository
@@ -48,7 +49,31 @@ The project is structured as follows:
 To clone the repository, run the following command:
 ```bash
 git clone https://github.com/your-username/project-management.git
+```
+Replace `your-username` with your actual GitHub username.
 
+### Forking the Repository
+To fork the repository, follow these steps:
+
+1. Log in to your GitHub account.
+2. Navigate to the repository's page.
+3. Click the "Fork" button in the top-right corner of the page.
+4. Choose the account where you want to fork the repository.
+5. Click "Create fork" to create a new fork of the repository.
+
+### Building the Image
+To build the Docker image, run the following command:
+```bash
+docker build -t project-management .
+```
+This will build the Docker image using the instructions in the `Dockerfile`.
+
+### Running the Container
+To run the Docker container, run the following command:
+```bash
+docker run -p 8080:8080 project-management
+```
+This will start a new container from the `project-management` image and map port 8080 on the host machine to port 8080 in the container.
 
 ## Dockerfile
 
