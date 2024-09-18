@@ -1,0 +1,14 @@
+# include any files that you don't want to be included in the docker image
+# eg. .dockerignore, .Dockerfile , .gitignore, etc.
+
+**/.Dockerfile
+**/.dockerignore
+**/.gitignore
+**/.vscode
+**/target
+**/node_modules
+**/.DS_Store
+**/.idea
+**/.git
+**/.venv
+**/.env
