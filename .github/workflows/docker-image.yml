@@ -29,8 +29,14 @@ jobs:
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/rust-project-management:latest
      - uses: actions/checkout@v4
-     - name: Build the Docker image
-       run: docker build . --file docker/debian/Dockerfile --tag my-image-name:$(date +%s1)
+     - 
+        name: Build the Docker image
+        run:
+          docker build . --file docker/debian/Dockerfile --tag ${{ vars.DOCKERHUB_USERNAME }}/rust-project-management:debian
+     -
+        name: Push to Docker Hub
+        run:
+          docker push ${{ vars.DOCKERHUB_USERNAME }}/rust-project-management:debian
      # -
      #    name: Build and push (debian)
      #    run: docker build -t ${{ vars.DOCKERHUB_USERNAME }}/rust-project-management:debian -f ./docker/debian/Dockerfile .
