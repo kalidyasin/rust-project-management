@@ -30,9 +30,12 @@ jobs:
           tags: ${{ vars.DOCKERHUB_USERNAME }}/rust-project-management:latest
      -
         name: Build and push (debian)
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: ./../..docker/debian/Dockerfile
-          push: true
-          tags: ${{ vars.DOCKERHUB_USERNAME }}/rust-project-management:debian
+        runs: docker build -t ${{ vars.DOCKERHUB_USERNAME }}/rust-project-management:debian -f ./docker/debian/Dockerfile .
+     # -
+     #    name: Build and push (debian)
+     #    uses: docker/build-push-action@v6
+     #    with:
+     #      context: .
+     #      file: ./docker/debian/Dockerfile
+     #      push: true
+     #      tags: ${{ vars.DOCKERHUB_USERNAME }}/rust-project-management:debian
