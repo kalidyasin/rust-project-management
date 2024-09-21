@@ -29,10 +29,10 @@ jobs:
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/rust-project-management:latest
      -
-        name: Build and push (slim)
+        name: Build and push (debian)
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: ./Dockerfile.slim
+          file: ./Dockerfile.debian
           push: true
-          tags: ${{ vars.DOCKERHUB_USERNAME }}/rust-project-management:slim
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/rust-project-management:debian
