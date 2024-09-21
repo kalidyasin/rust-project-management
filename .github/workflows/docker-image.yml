@@ -30,6 +30,7 @@ jobs:
          platforms: linux/amd64, linux/arm64
          tags: ${{ vars.DOCKERHUB_USERNAME }}/rust-project-management:latest
 
+     - uses: actions/checkout@v4
      - name: Build and push (debian)
        uses: docker/build-push-action@v6
        with:
