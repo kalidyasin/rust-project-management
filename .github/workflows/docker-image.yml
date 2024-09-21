@@ -32,7 +32,7 @@ jobs:
         name: Build and push (debian)
         uses: docker/build-push-action@v6
         with:
-          context: .
-          file: ./Dockerfile.debian
+          context: ./
+          file: Dockerfile.debian
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/rust-project-management:debian
