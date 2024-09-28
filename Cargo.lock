@@ -821,7 +821,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "project-management"
+name = "project_management"
 version = "0.1.0"
 dependencies = [
  "actix-web",

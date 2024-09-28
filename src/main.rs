@@ -43,6 +43,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
             .wrap(middleware::Logger::default()) // Adding logger middleware
+            .wrap(middleware::DefaultHeaders::new().add(("Content-Type", "application/json")))
             .service(index)
             .service(login)
             .service(signup)
