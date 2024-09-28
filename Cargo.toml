@@ -1,5 +1,5 @@
 [package]
-name = "project-management"
+name = "project_management"
 version = "0.1.0"
 edition = "2021"
 
