@@ -9,3 +9,6 @@ clean:
 
 release:
 	cargo build --release
+
+doc:
+	cargo doc
