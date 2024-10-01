@@ -2,6 +2,8 @@ use actix_web::{get, middleware, post, web, App, HttpResponse, HttpServer, Respo
 use env_logger::Env; // Importing env_logger
 use serde::{Deserialize, Serialize}; // Importing Serialize and Deserialize traits //
 
+mod routes;
+
 // Define a struct that will represent the data structure for JSON
 #[derive(Serialize, Deserialize)]
 struct LoginInputs {
@@ -45,6 +47,7 @@ async fn main() -> std::io::Result<()> {
             .wrap(middleware::Logger::default()) // Adding logger middleware
             .wrap(middleware::DefaultHeaders::new().add(("Content-Type", "application/json")))
             .service(index)
+            .service(routes::home::home)
             .service(login)
             .service(signup)
     })
