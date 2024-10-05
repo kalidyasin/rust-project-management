@@ -34,7 +34,7 @@ WORKDIR /app
 COPY --from=builder /code/target/release/project-management project-management
 
 # set user to non-root unless root is required for your app
-USER 1001
+USER 1000
 
 # indicate what port the server is running on
 EXPOSE 8080
